@@ -14,10 +14,10 @@ class MenuScene extends Phaser.Scene {
    * This method is the constructor
    */
   constructor() {
-    super({ key: "menuScene" })
+    super({ key: "menuScene" });
 
-    this.menuSceneBackgroundImage = null
-    this.startButton = null
+    this.menuSceneBackgroundImage = null;
+    this.startButton = null;
   }
 
   /**
@@ -27,7 +27,7 @@ class MenuScene extends Phaser.Scene {
    * @param {object} data - Any data via ScenePlugin.add() or ScenePlugin.start().
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff")
+    this.cameras.main.setBackgroundColor("#ffffff");
   }
 
   /**
@@ -35,9 +35,9 @@ class MenuScene extends Phaser.Scene {
    * Use it to load assets.
    */
   preload() {
-    console.log("Menu Scene")
-   this.load.image("menuSceneBackground", "./assets/menu_background.png");
-  this.load.image("startButtonImage", "./assets/start.png")
+    console.log("Menu Scene");
+    this.load.image("menuSceneBackground", "./assets/menu_background.png");
+    this.load.image("startButtonImage", "./assets/start.png");
   }
 
   /**
@@ -48,17 +48,17 @@ class MenuScene extends Phaser.Scene {
   create(data) {
     this.menuSceneBackgroundImage = this.add
       .sprite(0, 0, "menuSceneBackground")
-      .setScale(2.75)
-    this.menuSceneBackgroundImage.x = 1920 / 2
-    this.menuSceneBackgroundImage.y = 1080 / 2
+      .setScale(2.75);
+    this.menuSceneBackgroundImage.x = 1920 / 2;
+    this.menuSceneBackgroundImage.y = 1080 / 2;
 
     this.startButton = this.add.sprite(
       1920 / 2,
       1080 / 2 + 100,
       "startButtonImage"
-    )
-    this.startButton.setInteractive({ userHandCursor: true })
-    this.startButton.on("pointerdown", () => this.clickButton())
+    );
+    this.startButton.setInteractive({ userHandCursor: true });
+    this.startButton.on("pointerdown", () => this.clickButton());
     //pass
   }
 
@@ -74,8 +74,8 @@ class MenuScene extends Phaser.Scene {
    * pass
    */
   clickButton() {
-    this.scene.start("gameScene")
+    this.scene.start("gameScene");
   }
 }
 
-export default MenuScene
+export default MenuScene;

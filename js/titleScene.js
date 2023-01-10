@@ -14,15 +14,15 @@ class TitleScene extends Phaser.Scene {
    * This method is the constructor
    */
   constructor() {
-    super({ key: "titleScene" })
+    super({ key: "titleScene" });
 
-    this.titleSceneBackgroundImage = null
-    this.titleSceneText = null
+    this.titleSceneBackgroundImage = null;
+    this.titleSceneText = null;
     this.titleSceneTextStyle = {
       font: "200px Times",
       fill: "#fde4b9",
       align: "center",
-    }
+    };
   }
 
   /**
@@ -32,7 +32,7 @@ class TitleScene extends Phaser.Scene {
    * @param {object} data - Any data via ScenePlugin.add() or ScenePlugin.start().
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff")
+    this.cameras.main.setBackgroundColor("#ffffff");
   }
 
   /**
@@ -40,8 +40,8 @@ class TitleScene extends Phaser.Scene {
    * Use it to load assets.
    */
   preload() {
-    console.log("Title Scene")
-    this.load.image("titleSceneBackground", "./assets/background5.png")
+    console.log("Title Scene");
+    this.load.image("titleSceneBackground", "./assets/background5.png");
   }
 
   /**
@@ -52,13 +52,18 @@ class TitleScene extends Phaser.Scene {
   create(data) {
     this.titleSceneBackgroundImage = this.add
       .sprite(0, 0, "titleSceneBackground")
-      .setScale(0.5)
-    this.titleSceneBackgroundImage.x = 1920 / 2
-    this.titleSceneBackgroundImage.y = 1080 / 2
+      .setScale(0.5);
+    this.titleSceneBackgroundImage.x = 1920 / 2;
+    this.titleSceneBackgroundImage.y = 1080 / 2;
 
     this.titleSceneText = this.add
-      .text(1920 / 2, 1080 / 2 + 350, "Jerry Catching Cheese", this.titleSceneTextStyle)
-      .setOrigin(0.5)
+      .text(
+        1920 / 2,
+        1080 / 2 + 350,
+        "Jerry Catching Cheese",
+        this.titleSceneTextStyle
+      )
+      .setOrigin(0.5);
   }
 
   /**
@@ -69,10 +74,10 @@ class TitleScene extends Phaser.Scene {
    */
   update(time, delta) {
     if (time > 6000) {
-      this.scene.switch("menuScene")
+      this.scene.switch("menuScene");
       // pass
     }
   }
 }
 
-export default TitleScene
+export default TitleScene;
