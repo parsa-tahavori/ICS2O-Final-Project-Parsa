@@ -41,7 +41,7 @@ class TitleScene extends Phaser.Scene {
    */
   preload() {
     console.log("Title Scene")
-    this.load.image("titleSceneBackground", "assets/background1.png")
+    this.load.image("titleSceneBackground", "./assets/background5.png")
   }
 
   /**
@@ -57,7 +57,7 @@ class TitleScene extends Phaser.Scene {
     this.titleSceneBackgroundImage.y = 1080 / 2
 
     this.titleSceneText = this.add
-      .text(1920 / 2, 1080 / 2 + 350, "Tom and Jerry: Jerry Catching Cheese", this.titleSceneTextStyle)
+      .text(1920 / 2, 1080 / 2 + 350, "Jerry Catching Cheese", this.titleSceneTextStyle)
       .setOrigin(0.5)
   }
 
